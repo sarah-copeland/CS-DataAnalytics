@@ -1,3 +1,8 @@
+// Author: Sarah Copeland
+// Course: CS210 Project Three
+// Project: Corner Grocer item frequency tracker
+// Notes: Uses a class with public and private sections, map for counts, and creates frequency.dat
+
 #include "PurchaseTracker.h"
 #include <fstream>
 #include <iostream>
@@ -44,7 +49,6 @@ bool PurchaseTracker::LoadDataFromFile(const std::string& path) {
     }
     std::string item;
     while (std::getline(in, item)) {
-        // Handle potential CR from Windows line endings
         if (!item.empty() && item.back() == '\r') item.pop_back();
         if (item.empty()) continue;
         ++freq_[item];
